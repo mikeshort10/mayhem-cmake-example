@@ -12,7 +12,6 @@ WORKDIR /mayhem-cmake-example
 ## TODO: ADD YOUR BUILD INSTRUCTIONS HERE.
 RUN mkdir -p /mayhem-cmake-example/build
 WORKDIR /mayhem-cmake-example/build
-RUN ls /mayhem-cmake-example
 RUN CC=clang CXX=clang++ cmake ..
 RUN make
 
