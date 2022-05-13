@@ -14,7 +14,12 @@ jobs:
     name: ${{ matrix.os }} shared=${{ matrix.shared }} ${{ matrix.build_type }}
     runs-on: ${{ matrix.os }}
     permissions:
-      packages: write
+      # required for all workflows
+      security-events: write
+
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
     strategy:
       matrix:
         os: [ubuntu-latest]
